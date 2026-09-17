@@ -1,14 +1,12 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.16-eclipse-temurin-21-alpine'
-        }
-    }
+    agent any
 
     stages {
-        stage('build') {
+        stage('debug') {
             steps {
-                sh 'mvn --version'
+                sh 'echo $PATH'
+                sh 'which docker || true'
+                sh 'docker --version'
             }
         }
     }
