@@ -5,10 +5,6 @@ pipeline {
         }
     }
 
-    environment {
-        PATH = "/Applications/Docker.app/Contents/Resources/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-    }
-
     stages {
         stage('build') {
             steps {
