@@ -1,17 +1,18 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3.9.16-eclipse-temurin-21-alpine'
+        }
+    }
 
     environment {
         PATH = "/Applications/Docker.app/Contents/Resources/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     }
 
     stages {
-        stage('debug') {
+        stage('build') {
             steps {
-                sh 'echo $PATH'
-                sh 'which docker'
-                sh 'docker --version'
-                sh 'docker info'
+                sh 'mvn --version'
             }
         }
     }
