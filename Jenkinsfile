@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'macos'
-    }
+    agent any
 
     environment {
         DISABLE_AUTH = 'true'
